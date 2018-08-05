@@ -3,6 +3,10 @@ import Cart from './Cart.vue';
 import ViewProduct from './ViewProduct.vue'
 
 export const routes = [
+	//LEGACY ROUTES
+	{path: '/products/:productId/view',redirect: {name: 'viewProduct'}},
+	//LEGACY ROUTES
+
     { path: '', component: ProductList },
     { path: '/cart', component: Cart },
     {path: '/products/:productId',props:true, name:'viewProduct', component: ViewProduct}, //question mark means without id also it works
