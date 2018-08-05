@@ -8,17 +8,18 @@ Vue.use(VueRouter);
 const router = new VueRouter({
     routes: routes,
     mode: 'history',
-    scrollBehavior(to, from, savedPosition){
-    	if (to.hash){
-    		return {
-    			selector: to.hash
-    		};
-    	}	
-    	if (savedPosition){
-    		return savedPosition;
-
-    	}
-    	return {x: 0, y: 0};
+    scrollBehavior(to, from, savedPosition) {
+        if (to.hash) {
+            return {
+                selector: to.hash
+            };
+        }
+        
+        if (savedPosition) {
+            return savedPosition;
+        }
+        
+        return { x: 0, y: 0 };
     }
 });
 
@@ -33,6 +34,7 @@ Vue.filter('currency', function(value) {
 });
 
 export const eventBus = new Vue();
+export const authService = { isLoggedIn: false };
 
 new Vue({
     el: '#app',

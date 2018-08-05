@@ -55,7 +55,7 @@
                     params: {
                         productId: product.id
                     },
-                    query:{
+                    query: {
                         discount: 10
                     }
                 });
