@@ -1,5 +1,7 @@
 <template>
-    <div class="container">
+	<div>
+		<router-view name='discount'></router-view>
+	<div class="container">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -26,6 +28,9 @@
 
         <router-view :cart="cart"></router-view>
     </div>
+
+	</div>
+    
 </template>
 
 <script>
