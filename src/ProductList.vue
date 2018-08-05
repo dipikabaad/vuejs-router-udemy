@@ -4,8 +4,13 @@
             <div class="thumbnail">
                 <img @click="clickedImage(product)" class="group list-group-image" src="http://placehold.it/400x250/000/fff">
                 <div class="caption">
-                <router-link tag="h4" class="group inner list-group-item-heading" :to="{name: 'viewProduct', params: {productId: product.id}}"><a>{{product.name}}</a></router-link>
-                    
+                    <router-link
+                            :to="{ name: 'viewProduct', params: { productId: product.id } }"
+                            tag="h4"
+                            class="group inner list-group-item-heading">
+                        <a>{{ product.name }}</a>
+                    </router-link>
+
                     <p class="group inner list-group-item-text">{{ product.description }}</p>
                     <br>
 
@@ -44,10 +49,10 @@
                     quantity: quantity
                 });
             },
-            clickedImage(product){
+            clickedImage(product) {
                 this.$router.push({
                     name: 'viewProduct',
-                    params:{
+                    params: {
                         productId: product.id
                     }
                 });

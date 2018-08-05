@@ -1,14 +1,15 @@
 import ProductList from './ProductList.vue';
+import ViewProduct from './ViewProduct.vue';
 import Cart from './Cart.vue';
-import ViewProduct from './ViewProduct.vue'
+import Product from './Product.vue';
+import ProductReviews from './ProductReviews.vue';
 
 export const routes = [
-	//LEGACY ROUTES
-	{path: '/products/:productId/view',redirect: {name: 'viewProduct'}},
-	//LEGACY ROUTES
-
     { path: '', component: ProductList },
-    { path: '/cart', component: Cart, alias: '/shopping-cart' },
-    {path: '/products/:productId',props:true, name:'viewProduct', component: ViewProduct}, //question mark means without id also it works
-    {path: '*', component: { template: '<h1>Page Not Found!</h1>' } }
+    { path: '/products/:productId', name: 'product', props: true, component: Product, children: [
+        { path: 'details', name: 'viewProduct', props: true, component: ViewProduct },
+        { path: 'reviews', name: 'productReviews', props: true, component: ProductReviews }
+    ] },
+    { path: '/cart', component: Cart },
+    { path: '*', component: { template: '<h1>Page Not Found!</h1>' } }
 ];

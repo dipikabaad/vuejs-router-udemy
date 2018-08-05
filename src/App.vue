@@ -9,10 +9,11 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <router-link to="/" tag="li" exact active-class="active">
-                        <a>Products</a>
+                            <a>Products</a>
                         </router-link>
+
                         <router-link to="/cart" tag="li" active-class="active">
-                        <a>Cart</a>
+                            <a>Cart</a>
                         </router-link>
                     </ul>
 
