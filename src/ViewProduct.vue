@@ -11,6 +11,11 @@
 <script>
     import { products } from './data/products';
     export default {
+    	props: {
+    		productId:{
+    			required: true
+    		}
+    	},
         data() {
             return {
                 products: products,
@@ -18,8 +23,7 @@
             };
         },
         created() {
-            let productId = this.$route.params.productId;
-            this.product = this.getProduct(productId);
+            this.product = this.getProduct(this.productId);
         },
         methods: {
             getProduct(productId) {

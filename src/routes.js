@@ -5,6 +5,6 @@ import ViewProduct from './ViewProduct.vue'
 export const routes = [
     { path: '', component: ProductList },
     { path: '/cart', component: Cart },
-    {path: '/products/:productId',name:'viewProduct', component: ViewProduct}, //question mark means without id also it works
+    {path: '/products/:productId',props:true, name:'viewProduct', component: ViewProduct}, //question mark means without id also it works
     { path: '*', component: { template: '<h1>Page Not Found!</h1>' } }
 ];
