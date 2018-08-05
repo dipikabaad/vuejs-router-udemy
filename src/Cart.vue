@@ -63,12 +63,13 @@
     export default {
         props: ['cart'],
         mixins: [ CartMixin ],
-        beforeRouteLeave(to, from, next){
-            if(this.cart.items.length > 0){
-                if(!confirm('Are you sure that you don\'t want to buy these awesome products')){
+        beforeRouteLeave(to, from, next) {
+            if (this.cart.items.length > 0) {
+                if (!confirm('Are you sure you don\'t want to buy these products?')) {
                     return next(false);
                 }
             }
+
             next();
         }
     }

@@ -27,19 +27,18 @@
             };
         },
         created() {
-          
             this.product = this.getProduct(this.productId);
 
             if (typeof this.$route.query.discount !== 'undefined') {
                 this.discount = this.getDiscount(this.product.price, this.$route.query.discount);
             }
         },
-        beforeRouteUpdate(to, from , next){
-        	this.discount = this.getDiscount(this.product.price, to.query.discount);
-        	this.product = this.getProduct(to.params.productId);
-        	next();
+        beforeRouteUpdate(to, from, next) {
+            this.discount = this.getDiscount(this.product.price, to.query.discount);
+            this.product = this.getProduct(to.params.productId);
+
+            next();
         },
-      
         methods: {
             getProduct(productId) {
                 let match = null;
