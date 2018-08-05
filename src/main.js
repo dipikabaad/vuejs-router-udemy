@@ -1,6 +1,6 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './App.vue'
+import App from './App.vue';
 import ProductList from './ProductList.vue';
 import Cart from './Cart.vue';
 
@@ -10,7 +10,8 @@ const router = new VueRouter({
     routes: [
         { path: '', component: ProductList },
         { path: '/cart', component: Cart }
-    ]
+    ],
+    mode: 'history'
 });
 
 Vue.filter('currency', function(value) {
@@ -28,5 +29,5 @@ export const eventBus = new Vue();
 new Vue({
     el: '#app',
     render: h => h(App),
-    router: router
+    router: router 
 })
